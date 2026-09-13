@@ -18,16 +18,16 @@ class VideoRepositoryImpl : VideoRepository {
                 title = "Morning Yoga",
                 videoUrl = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4",
                 category = "Yoga",
-                offsetX = 50f,
-                offsetY = 50f
+                offsetX = 20f,
+                offsetY = 40f
             ),
             WellnessVideo(
                 id = "2",
                 title = "Deep Meditation",
                 videoUrl = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4",
                 category = "Meditation",
-                offsetX = -80f,
-                offsetY = 250f
+                offsetX = 200f,
+                offsetY = 180f
             ),
             WellnessVideo(
                 id = "3",
@@ -35,23 +35,23 @@ class VideoRepositoryImpl : VideoRepository {
                 videoUrl = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4",
                 category = "Soundscape",
                 offsetX = 100f,
-                offsetY = 450f
+                offsetY = 360f
             ),
             WellnessVideo(
                 id = "4",
                 title = "Breathwork Basics",
                 videoUrl = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4",
                 category = "Breathing",
-                offsetX = -40f,
-                offsetY = 650f
+                offsetX = 30f,
+                offsetY = 540f
             ),
             WellnessVideo(
                 id = "5",
                 title = "Stretching Routine",
                 videoUrl = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4",
                 category = "Yoga",
-                offsetX = 70f,
-                offsetY = 850f
+                offsetX = 180f,
+                offsetY = 720f
             )
         )
         emit(dummyVideos)

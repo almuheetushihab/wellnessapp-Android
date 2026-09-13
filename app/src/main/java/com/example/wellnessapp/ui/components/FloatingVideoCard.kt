@@ -16,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalInspectionMode
 import androidx.compose.ui.unit.dp
@@ -41,6 +42,12 @@ fun FloatingVideoCard(
                 .sharedElement(
                     sharedContentState = rememberSharedContentState(key = "video_${video.id}"),
                     animatedVisibilityScope = animatedVisibilityScope
+                )
+                .shadow(
+                    elevation = 16.dp,
+                    shape = RoundedCornerShape(24.dp),
+                    spotColor = Color.Black.copy(alpha = 0.5f),
+                    ambientColor = Color.Black.copy(alpha = 0.3f)
                 )
                 .clip(RoundedCornerShape(24.dp)) // Heavy iOS-like rounded corners
                 .background(Color.DarkGray)
