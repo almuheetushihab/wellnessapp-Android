@@ -1,12 +1,14 @@
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.wellnessapp.data.repository.VideoRepository
+import com.example.wellnessapp.repository.VideoRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import javax.inject.Inject
 
 @HiltViewModel
@@ -17,10 +19,12 @@ class HomeViewModel @Inject constructor(
     private val _selectedFilter = MutableStateFlow("All")
     val selectedFilter = _selectedFilter.asStateFlow()
 
-    // Filter change hole video list update hobe
-    val videos = _selectedFilter.map { filter ->
-        if (filter == "All") repository.getAllVideos()
-        else repository.getVideosByCategory(filter)
+    @OptIn(ExperimentalCoroutinesApi::class)
+    val videos = _selectedFilter.flatMapLatest { filter ->
+        repository.getVideos().map { videoList ->
+            if (filter == "All") videoList
+            else videoList.filter { it.category == filter }
+        }
     }.stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
 
     fun updateFilter(filter: String) {
