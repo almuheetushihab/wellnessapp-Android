@@ -10,48 +10,63 @@ interface VideoRepository {
 
 class VideoRepositoryImpl : VideoRepository {
     override fun getVideos(): Flow<List<WellnessVideo>> = flow {
-        // Dummy data with varied X/Y offsets for the floating effect
-        // Real app would fetch this from a local DB or network API
+        // Dummy data with varied X/Y offsets for the scattered floating effect across Left, Center, Right
         val dummyVideos = listOf(
             WellnessVideo(
                 id = "1",
-                title = "Morning Yoga",
+                title = "Morning Flow",
                 videoUrl = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4",
                 category = "Yoga",
-                offsetX = 20f,
-                offsetY = 40f
+                offsetX = 16f,   // Left
+                offsetY = 30f
             ),
             WellnessVideo(
                 id = "2",
-                title = "Deep Meditation",
+                title = "Deep Inner Peace",
                 videoUrl = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4",
                 category = "Meditation",
-                offsetX = 200f,
-                offsetY = 180f
+                offsetX = 210f,  // Right
+                offsetY = 130f
             ),
             WellnessVideo(
                 id = "3",
-                title = "Relaxing Sounds",
+                title = "Forest River Serenity",
                 videoUrl = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4",
                 category = "Soundscape",
-                offsetX = 100f,
-                offsetY = 360f
+                offsetX = 100f,  // Center
+                offsetY = 270f
             ),
             WellnessVideo(
                 id = "4",
-                title = "Breathwork Basics",
+                title = "Box Breathing Reset",
                 videoUrl = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4",
                 category = "Breathing",
-                offsetX = 30f,
-                offsetY = 540f
+                offsetX = 24f,   // Left
+                offsetY = 410f
             ),
             WellnessVideo(
                 id = "5",
-                title = "Stretching Routine",
+                title = "Evening Stretch",
                 videoUrl = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4",
                 category = "Yoga",
-                offsetX = 180f,
-                offsetY = 720f
+                offsetX = 200f,  // Right
+                offsetY = 550f
+            ),
+            WellnessVideo(
+                id = "6",
+                title = "Ocean Waves Harmony",
+                videoUrl = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4",
+                category = "Soundscape",
+                offsetX = 105f,  // Center
+                offsetY = 690f
+            ),
+            WellnessVideo(
+                id = "7",
+                title = "Mindful Breathwork",
+                videoUrl = "https://storage.googleapis.com/exoplayer-test-media-0/BigBuckBunny_320x180.mp4",
+                category = "Breathing",
+                offsetX = 20f,   // Left
+                offsetY = 830f
             )
         )
         emit(dummyVideos)
