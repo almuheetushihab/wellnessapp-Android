@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Background Gradient -->
+    <path
+        android:pathData="M 0,0 H 108 V 108 H 0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="0"
+                android:startY="0"
+                android:endX="108"
+                android:endY="108"
+                android:type="linear">
+                <item android:offset="0" android:color="#FFE5D9" /> <!-- Soft Peach -->
+                <item android:offset="0.5" android:color="#E8DFF5" /> <!-- Light Lavender -->
+                <item android:offset="1" android:color="#D0F4F7" /> <!-- Pale Cyan -->
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Back Floating Card (Rotated slightly left) -->
+    <path
+        android:pathData="M 28,30 C 28,24.477 32.477,20 38,20 H 60 C 65.523,20 70,24.477 70,30 V 65 C 70,70.523 65.523,75 60,75 H 38 C 32.477,75 28,70.523 28,65 Z"
+        android:fillColor="#80FFFFFF"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="1.5" />
+
+    <!-- Front Floating Card (Rotated slightly right, Offset) -->
+    <path
+        android:pathData="M 42,45 C 42,39.477 46.477,35 52,35 H 74 C 79.523,35 84,39.477 84,45 V 80 C 84,85.523 79.523,90 74,90 H 52 C 46.477,90 42,85.523 42,80 Z"
+        android:fillColor="#E6FFFFFF"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="2" />
+
+    <!-- Inner Calm Circle (Represents focus/meditation) -->
+    <path
+        android:pathData="M 63,62.5 m -8,0 a 8,8 0 1,1 16,0 a 8,8 0 1,1 -16,0"
+        android:fillColor="#6366F1" /> <!-- Deep Indigo from your bottom bar -->
+</vector>
